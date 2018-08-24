@@ -376,7 +376,7 @@ class Rbac
             throw new Exception('参数错误');
         }
 
-        return Db::name($this->userTable)->insert($data);
+        return Db::name($this->userTable)->insertGetId($data);  // 此处原来是insert不会返回id，使用insertGetId则可以返回id
     }
 
     /**
